@@ -1,0 +1,15 @@
+{
+  "name": "drainpipe",
+  "version": "0.0.0",
+  "description": "",
+  "main": "drainpipe.js",
+  "scripts": {
+    "test": "mocha -R spec drainpipe.test.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "mocha": "^1.21.4"
+  }
+}
