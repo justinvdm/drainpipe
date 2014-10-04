@@ -46,4 +46,20 @@ describe("dp", function() {
       ()
       .should.equal(23)
   })
+
+  it("should allow additional arguments to be given", function() {
+    function add(x, y, z) {
+      return x + y + z
+    }
+
+    function mul(x, y, z) {
+      return x * y * z
+    }
+
+    dp(23)
+      (add, 1, 3)
+      (mul, 2, 4)
+      ()
+      .should.equal(216)
+  })
 })

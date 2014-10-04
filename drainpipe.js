@@ -8,7 +8,11 @@ function drainpipe(x) {
 
   function self(fn) {
     if (!arguments.length) return curr
-    curr = unwrap(fn(curr))
+
+    var args = Array.prototype.slice.call(arguments, 1)
+    args.unshift(curr)
+    curr = unwrap(fn.apply(fn, args))
+
     return self
   }
 
