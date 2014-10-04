@@ -18,4 +18,32 @@ describe("drainpipe", function() {
       ()
       .should.equal(48)
   })
+
+  it("should unwrap a wrapped initial value", function() {
+    function identity(x) {
+      return x
+    }
+
+    drainpipe(
+      drainpipe(
+        drainpipe(23)
+           (identity))
+         (identity))
+       (identity)
+      ()
+      .should.equal(23)
+  })
+
+  it("should unwrap a wrapped return value", function() {
+    function identity(x) {
+      return drainpipe(x)
+    }
+
+    drainpipe(23)
+      (identity)
+      (identity)
+      (identity)
+      ()
+      .should.equal(23)
+  })
 })
