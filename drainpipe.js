@@ -36,6 +36,6 @@
     })
   }
   else {
-    this.drainpipe = drainpipe
+    this.v = drainpipe
   }
 }).call(this);
