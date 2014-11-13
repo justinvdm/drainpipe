@@ -1,5 +1,5 @@
 require('chai').should()
-var v = require('./drainpipe')
+var l = require('./drainpipe')
 
 
 describe("drainpipe", function() {
@@ -12,7 +12,7 @@ describe("drainpipe", function() {
       return x * 2
     }
 
-    v(23)
+    l(23)
      (add1)
      (mul2)
      ()
@@ -24,7 +24,7 @@ describe("drainpipe", function() {
       return x
     }
 
-    v(v(v(23)
+    l(l(l(23)
          (identity))
        (identity))
      (identity)
@@ -34,10 +34,10 @@ describe("drainpipe", function() {
 
   it("should unwrap a wrapped return value", function() {
     function identity(x) {
-      return v(x)
+      return l(x)
     }
 
-    v(23)
+    l(23)
      (identity)
      (identity)
      (identity)
@@ -54,7 +54,7 @@ describe("drainpipe", function() {
       return x * y * z
     }
 
-    v(23)
+    l(23)
      (add, 1, 3)
      (mul, 2, 4)
      ()
