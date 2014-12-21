@@ -1,13 +1,20 @@
 {
   "name": "drainpipe",
-  "version": "0.0.0",
-  "description": "",
+  "version": "0.1.0",
+  "description": "pipe a value through a chain of functions",
+  "homepage": "https://github.com/justinvdm/drainpipe",
   "main": "drainpipe.js",
   "scripts": {
     "test": "mocha -R spec drainpipe.test.js"
   },
-  "author": "",
+  "author": "justinvdm",
   "license": "MIT",
+  "keywords": [
+    "chain",
+    "chaining",
+    "pipe",
+    "thread"
+  ],
   "devDependencies": {
     "chai": "^1.9.1",
     "mocha": "^1.21.4"
