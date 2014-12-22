@@ -6,7 +6,7 @@ pipe a value through a chain of functions
 vv(23)
   (function(v) { return v * 2 })
   (function(v) { return v + 2 })
-  (function(v) { console.log(v) })  // 47
+  (function(v) { console.log(v) })  // 48
 ```
 
 
@@ -61,5 +61,5 @@ var x = vv(23)
   (function(v) { return v + 2 })
   ()
 
-console.log(x)  // 47
+console.log(x)  // 48
 ```
