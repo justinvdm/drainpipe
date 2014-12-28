@@ -1,5 +1,7 @@
 # drainpipe
 
+![Build Status](https://api.travis-ci.org/justinvdm/drainpipe.png)
+
 pipe a value through a chain of functions
 
 ```javascript
