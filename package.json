@@ -1,11 +1,28 @@
 {
   "name": "drainpipe",
   "version": "0.1.2",
-  "description": "pipe a value through a chain of functions",
+  "description": "utility for piping a value through a chain of functions",
   "homepage": "https://github.com/justinvdm/drainpipe",
-  "main": "drainpipe.js",
+  "main": "./drainpipe.js",
+  "type": "commonjs",
+  "exports": {
+    "import": "./drainpipe.mjs",
+    "require": "./drainpipe.js"
+  },
+  "types": "./drainpipe.d.ts",
+  "files": [
+    "drainpipe.js",
+    "drainpipe.d.ts",
+    "dist"
+  ],
   "scripts": {
-    "test": "mocha -R spec drainpipe.test.js"
+    "build": "otr build drainpipe.js",
+    "lint": "otr lint",
+    "format": "otr format",
+    "test": "otr test",
+    "release": "otr release",
+    "typetest": "otr typetest",
+    "checks": "yarn lint && yarn typetest && yarn test"
   },
   "author": "justinvdm",
   "license": "MIT",
@@ -15,9 +32,18 @@
     "pipe",
     "thread"
   ],
+  "oftherivier": {
+    "type": "es5",
+    "src": "index.js",
+    "libName": "vv"
+  },
+  "renovate": {
+    "extends": [
+      "github>oftherivier/tools"
+    ]
+  },
   "devDependencies": {
-    "chai": "^1.9.1",
-    "mocha": "^1.21.4"
+    "@oftherivier/tools": "0.1.37"
   },
   "repository": {
     "type": "git",

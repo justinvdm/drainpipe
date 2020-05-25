@@ -2,66 +2,82 @@
 
 ![Build Status](https://api.travis-ci.org/justinvdm/drainpipe.png)
 
-pipe a value through a chain of functions
+utility for piping a value through a chain of functions
 
-```javascript
+```js
 vv(23)
-  (function(v) { return v * 2 })
-  (function(v) { return v + 2 })
-  (function(v) { console.log(v) })  // 48
+  (v => v * 2)
+  (v => v + 2)
+  (v => console.log(v))
+// =>
+48
 ```
-
-
-## install
-
-node:
-
-```
-$ npm install drainpipe
-```
-
-browser:
-
-```
-$ bower install drainpipe
-```
-
-```html
-<script src="/bower_components/drainpipe/drainpipe.js"></script>
-```
-
 
 ## api
 
 ### `vv(x)`
 
-Takes in a value and starts a drainpipe chain.
+Takes in a value and starts a chain.
 
 ### `vv(x)(fn[, arg1[, arg2[, ...]]])`
 
-Takes in a function and optional extra arguments, calls the function with the current value in the drainpipe chain and stores its result as the new value in the drainpipe chain.
+Takes in a function and optional extra arguments, calls the function with the
+current value in the drainpipe chain and stores its result as the new value in
+the drainpipe chain.
 
-```javascript
+```js
 function add(a, b) {
   return a + b
 }
 
-
 vv(23)
   (add, 1)
   (add, 3)
-  (function(v) { console.log(v) })  // 27
+  (v => console.log(v)) // 27
 ```
 
 ### `vv(x)()`
 
 Returns the current value in the drainpipe chain
 
-```javascript
+```js
 var x = vv(23)
-  (function(v) { return v * 2 })
-  (function(v) { return v + 2 })
+  (v => v * 2)
+  (v => v + 2)
   ()
 
-console.log(x)  // 48
+console.log(x) // 48
+```
+
+## install
+
+You can use this library as the npm package `drainpipe`:
+
+```
+npm i drainpipe
+# or
+yarn add drainpipe
+```
+
+It can be used in both es-module-aware and commonjs bundlers/environments.
+
+```js
+// es module
+import vv from 'drainpipe'
+
+// commonjs
+const vv = require('drainpipe')
+```
+
+It can also be used a `<script>`:
+
+```html
+<script
+  crossorigin
+  src="https://unpkg.com/drainpipe/dist/umd/drainpipe.js"
+></script>
+
+<script>
+  vv(23)(v => console.log(v))
+</script>
 ```
