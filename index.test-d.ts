@@ -1,5 +1,5 @@
 import { expectType, expectError } from 'tsd'
-import vv from './drainpipe'
+import vv from '.'
 
 declare function numToStr(v: number): string
 declare function arrayify<V>(v: V): V[]

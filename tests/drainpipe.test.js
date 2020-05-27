@@ -1,5 +1,5 @@
 const it = require('ava')
-const vv = require('../drainpipe')
+const vv = require('..')
 
 it('should pipe a value through a chain of functions', t => {
   function add1(x) {
