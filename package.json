@@ -43,7 +43,7 @@
     ]
   },
   "devDependencies": {
-    "@oftherivier/tools": "0.1.37"
+    "@oftherivier/tools": "0.1.38"
   },
   "repository": {
     "type": "git",
